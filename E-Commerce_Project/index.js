@@ -19,10 +19,12 @@ const LocalStrategy = require('passport-local'); // Passport strategy for local 
 const User = require('./models/user'); // User model for authentication
 const mongoSanitize = require('express-mongo-sanitize'); // Middleware to sanitize user inputs to prevent NoSQL injection attacks
 
+
 // Connecting to the MongoDB database
 mongoose.connect('mongodb://127.0.0.1:27017/ecom') // Local MongoDB connection
   .then(() => { console.log("DB Connected!!!"); }) // Log message if connection is successful
   .catch((err) => { console.log(err); }); // Log error if connection fails
+  
 
 // Setting up the view engine and views directory
 app.set("view engine", "ejs"); // Setting EJS as the view engine
