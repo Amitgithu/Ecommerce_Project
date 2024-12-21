@@ -20,9 +20,9 @@ const productSchema = new mongoose.Schema({
     required: true, // Price is mandatory
   },
   quantity:{
-    type:Number,
-    min:0,
-    default:1
+    type:Number,  // Quantity which user want to buy
+    min: 0,     // Minimum quantity cannot be negative
+    default: 1 // Default quantity if not provided
   },
   stockQuantity: {
     type: Number,

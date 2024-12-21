@@ -45,7 +45,7 @@ router.post('/products/:productid/review', isLoggedIn, validateReview, async (re
         console.log("Error");
         
         // Rendering the error page with the error message
-        res.status(500).render('error', { err: err.message });
+        res.status(500).render('error-page', { err: err.message });
     }
 });
 

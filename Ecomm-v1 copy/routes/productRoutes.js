@@ -19,7 +19,7 @@ router.get('/products', async (req, res) => {
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -79,7 +79,7 @@ router.get('/products/new', isLoggedIn, (req, res) => {
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -140,7 +140,7 @@ router.post('/products', isLoggedIn, isSeller, validateProduct, async (req, res)
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -155,7 +155,7 @@ router.get('/products/:id', async (req, res) => {
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -171,7 +171,7 @@ router.get('/products/:id/edit', isLoggedIn, isProductAuthor, async (req, res) =
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -189,7 +189,7 @@ router.patch('/products/:id', validateProduct, isLoggedIn, isProductAuthor, asyn
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 
@@ -206,7 +206,7 @@ router.delete('/products/:id', isLoggedIn, isProductAuthor, async (req, res) => 
     }
     catch (e) {
         // If there is an error, render an error page
-        res.status(500).render('error', { err: e.message });
+        res.status(500).render('error-page', { err: e.message });
     }
 });
 

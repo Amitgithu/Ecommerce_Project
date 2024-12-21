@@ -37,10 +37,7 @@ router.post('/updateCart', async (req, res) => {
     for (let { productId, quantity } of updatedCartData) {
       // Find the product in the Product collection
       const product = await Product.findById(productId);
-
-      console.log("Product ID : ", productId, "Quantity : ", quantity);
       
-
       // Check if the product exists
       if (!product) {
         return res.status(404).json({ message: `Product with ID ${productId} not found` });
@@ -72,8 +69,6 @@ router.post('/updateCart', async (req, res) => {
 });
 
 
-
-
 // Route to render the checkout page
 router.get("/user/checkout", isLoggedIn, async (req, res) => {
   // Fetching the user's data and their populated cart
@@ -86,7 +81,6 @@ router.get("/user/checkout", isLoggedIn, async (req, res) => {
     totalAmount += product.selling_price * product.quantity; // Calculate total based on quantity
   });
 
-  // console.log("User Cart : ", user);
 
   // Rendering the checkout page with the user's cart, total amount, and product details
   res.render("cart/checkout-page", { user, totalAmount });

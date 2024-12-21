@@ -1,5 +1,5 @@
 // Define the port on which the server will listen
-const port = 8080;
+const PORT = 8080;
 
 // Importing required modules
 const express = require("express"); // Express framework for creating server and handling routes
@@ -98,6 +98,6 @@ app.get('/', (req, res) => {
 });
 
 // Start the server and listen on the specified port
-app.listen(port, () => {
-  console.log(`Live at port ${port}`); // Log a message when the server starts
+app.listen(PORT, () => {
+  console.log(`Live at port ${PORT}`); // Log a message when the server starts
 });
