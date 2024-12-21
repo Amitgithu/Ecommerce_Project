@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"  />
+    
+    <link rel="stylesheet" href="/CSS/app.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+
+  <%- include('../partials/navbar') %>
+    
+    <div class="container-fluid mt-5 ">
+        <div class="row p-4">
+                <div class="col-md-2 mt-3">
+
+                    <form action="/filter/products">
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="h5">Filter : </span>
+                            <button class="btn btn-primary text-center" type="submit">Filter <i class="fa-solid fa-filter"></i></button>
+                        </div>
+
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+    
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              Category
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Men" name="category" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Men
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Shoes" name="category" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Shoes
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Women" name="category" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Women
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Electronics" name="category" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Electronics
+                                    </label>
+                                </div>
+                              <!-- <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                              Price
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1099" name="price" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Under Rs. 1099
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1599" name="price" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Under Rs. 1599
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="2099" name="price" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Under Rs. 2099
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="3099" name="price" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Under Rs. 3099
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="5000" name="price" id="flexCheckDefault" >
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Under Rs. 5000
+                                    </label>
+                                </div>
+                              <!-- <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                              Color
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Black" name="color" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Black
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Olive" name="color" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Olive
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Green" name="color" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Green
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Red" name="color" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                       Red
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="Gray" name="color" id="flexCheckDefault" >
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Gray
+                                    </label>
+                                </div>
+        
+                              <!-- <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+                            </div>
+                          </div>
+                        </div>
+        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                Discount
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFour">
+                              <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="10%" discount="10%" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        10% And Above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="20%" discount="10%" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        20% And Above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="30%" discount="10%" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        30% And Above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="40%" discount="10%" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        40% And Above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" discount="10%" id="flexCheckDefault" >
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        50% And Above
+                                    </label>
+                                </div>
+                                <!-- <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow. -->
+                              </div>
+                            </div>
+                          </div>
+        
+                          <!-- <div class="accordion-item">
+                            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                                Average Rating
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+                              <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="2" name="rating" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        2.0 and above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="3" name="rating" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        3.0 and above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="3.5" name="rating" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        3.5 and above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="4" name="rating" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        4.0 and above
+                                    </label>
+                                </div>
+        
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="4.5" name="rating" id="flexCheckDefault" >
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        4.5 and above
+                                    </label>
+                                </div>
+        
+                                 
+                              </div>
+                            </div>
+                          </div> -->
+                         
+                      </div>
+
+                      </form>
+        
+                </div>
+
+                <div class="col-md-10 p-4">
+                    <div class="row">
+                        <% for (let item of product){ %>
+                            <div class="col-md-3 mb-3 product p-2">
+                              <img src="<%=item.image%>" class="img-fluid text-center" alt="">
+                              <div class="product-content">
+                      
+                                <div class="product-category d-flex justify-content-between">
+                                    <span><%=item.category%></span>
+                                    <span ><%=item.color%></span>
+                                  </div>
+                                <h2><a href="" ><%= item.name %></a></h2>
+                                <!-- <div class="rating-result" title="90%">
+                                  <span>
+                                      <span>50%</span>
+                                  </span>
+                              </div> -->
+                                <div class="product-price">
+                                  <span>Rs. <%=item.selling_price%> </span>
+                                  <span class="old-price text-decoration-line-through">Rs. <%=item.price%> </span>
+                                  <span class="discount">(<%=item.discount%> off)</span>
+                                </div>
+                                <div class="product-action-1 show">
+                                  <a aria-label="Add To Cart" class="action-btn hover-up" href=""><i
+                                      class="fi-rs-shopping-bag-add"></i></a>
+                                </div>
+                      
+                                <div class="text-center">
+                                  <a href="/products/<%=item._id%>" class="btn btn-primary">View Product</a>
+                                </div>
+                      
+                              </div>
+                            </div>
+                        <% } %>
+
+                        
+                    
+                    </div>
+                </div>
+    
+            </form>
+
+            
+        </div>
+    </div>
+    
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+</body>
+</html>

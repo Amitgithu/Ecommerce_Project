@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+  <link rel="stylesheet" href="/CSS/app.css">
+
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+
+  <%- include('../partials/navbar') %>
+
+  <!-- Modal -->
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://themes.pixelstrap.com/bigboost/assets/images/home-banner/2.jpg" width="663px"
+          style="max-height: 550px;" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="http://themes.pixelstrap.com/bigboost/assets/images/home-banner/1.jpg" width="663px"
+          style="max-height: 550px;" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-1.png" alt="">
+          <h4 class="bg-1">Free Shipping</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-2.png" alt="">
+          <h4 class="bg-1">Online Order</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-3.png" alt="">
+          <h4 class="bg-1">Save Money</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-4.png" alt="">
+          <h4 class="bg-1">Promotions</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-5.png" alt="">
+          <h4 class="bg-1">Happy Sell</h4>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+        <div class="banner-features wow fadeIn animated hover-up animated animated" style="visibility: visible;">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/theme/icons/feature-6.png" alt="">
+          <h4 class="bg-1">24/7 Support</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Men's Collection -->
+
+
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between">
+      <span></span>
+      <span class="h2">Men's Collection</span>
+      <span>
+        <a href="/filter">View More Products</a>
+      </span>
+    </div>
+
+    <div class="row mt-3">
+       <% for (let item of menProducts){ %>
+      <div class="col-md-3 mb-3 product p-2">
+        <img src="<%=item.image%>" class="img-fluid text-center" alt="">
+        <div class="product-content">
+
+          <div class="product-category">
+            <a href=""><%=item.category%></a>
+          </div>
+          <h2><a href="" ><%= item.name %></a></h2>
+          <!-- <div class="rating-result" title="90%">
+            <span>
+                <span>50%</span>
+            </span>
+        </div> -->
+          <div class="product-price">
+            <span>Rs. <%=item.selling_price%> </span>
+            <span class="old-price text-decoration-line-through">Rs. <%=item.price%> </span>
+            <span class="discount">(<%=item.discount%>)</span>
+          </div>
+          <div class="product-action-1 show">
+            <a aria-label="Add To Cart" class="action-btn hover-up" href=""><i
+                class="fi-rs-shopping-bag-add"></i></a>
+          </div>
+          <div class="text-center">
+            <a href="/products/<%=item._id%>" class="btn btn-primary">View Product</a>
+          </div>
+          
+        </div>
+      </div>
+    <% } %>
+
+      
+    </div>
+  </div>
+
+  <!-- Women's Collection -->
+
+  <div class="container mt-5">
+
+    <div class="d-flex justify-content-between">
+      <span></span>
+      <span class="h2">Women's Collection</span>
+      <span>
+        <a href="/filter">View More Products</a>
+      </span>
+    </div>
+
+    <div class="row mt-3">
+       <% for (let item of womenProducts){ %>
+      <div class="col-md-3 mb-3 product p-2">
+        <img src="<%=item.image%>" class="img-fluid text-center" alt="">
+        <div class="product-content">
+
+          <div class="product-category">
+            <a href=""><%=item.category%></a>
+          </div>
+          <h2><a href="" ><%= item.name %></a></h2>
+          <!-- <div class="rating-result" title="90%">
+            <span>
+                <span>50%</span>
+            </span>
+        </div> -->
+          <div class="product-price">
+            <span>Rs. <%=item.selling_price%> </span>
+            <span class="old-price text-decoration-line-through">Rs. <%=item.price%> </span>
+            <span class="discount">(<%=item.discount%>)</span>
+          </div>
+          <div class="product-action-1 show">
+            <a aria-label="Add To Cart" class="action-btn hover-up" href=""><i
+                class="fi-rs-shopping-bag-add"></i></a>
+          </div>
+
+          <div class="text-center">
+            <a href="/products/<%=item._id%>" class="btn btn-primary">View Product</a>
+          </div>
+
+        </div>
+      </div>
+    <% } %>
+
+      
+    </div>
+  </div>
+
+  <!-- Shoes Collection -->
+
+  <div class="container mt-5">
+
+    <div class="d-flex justify-content-between">
+      <span></span>
+      <span class="h2">Shoes Collection</span>
+      <span>
+        <a href="/filter">View More Products</a>
+      </span>
+    </div>
+
+    <div class="row mt-3">
+       <% for (let item of shoeProducts){ %>
+      <div class="col-md-3 mb-3 product p-2">
+        <img src="<%=item.image%>" class="img-fluid text-center" alt="">
+        <div class="product-content">
+
+          <div class="product-category">
+            <a href=""><%=item.category%></a>
+          </div>
+          <h2><a href="" ><%= item.name %></a></h2>
+          <!-- <div class="rating-result" title="90%">
+            <span>
+                <span>50%</span>
+            </span>
+        </div> -->
+          <div class="product-price">
+            <span>Rs. <%=item.selling_price%> </span>
+            <span class="old-price text-decoration-line-through">Rs. <%=item.price%> </span>
+            <span class="discount">(<%=item.discount%>)</span>
+          </div>
+          <div class="product-action-1 show">
+            <a aria-label="Add To Cart" class="action-btn hover-up" href=""><i
+                class="fi-rs-shopping-bag-add"></i></a>
+          </div>
+
+          <div class="text-center">
+            <a href="/products/<%=item._id%>" class="btn btn-primary">View Product</a>
+          </div>
+
+        </div>
+      </div>
+    <% } %>
+    </div>
+  </div>
+
+  <div class="container-fl">
+    <div class="row">
+      <div class="col-12 text-center">
+          <img src="https://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/banner/banner-8.jpg" class="img-fluid "  style="max-height: 200px;" alt="">
+          <div class="banner-content">
+              <h5 class="text-grey-4 mb-15">Shop Today’s Deals</h5>
+              <h2 class="fw-600">Happy <span class="text-success">Diwali</span>. Big Sale Up to 40%</h2>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Electronic Collection -->
+
+  <div class="container mt-5">
+
+    <div class="d-flex justify-content-between">
+      <span></span>
+      <span class="h2">Electronics Collection</span>
+      <span>
+        <a href="/filter">View More Products</a>
+      </span>
+    </div>
+    
+    <div class="row mt-3">
+       <% for (let item of electronicProducts){ %>
+      <div class="col-md-3 mb-3 product p-2">
+        <img src="<%=item.image%>" class="img-fluid text-center" alt="">
+        <div class="product-content">
+
+          <div class="product-category">
+            <a href=""><%=item.category%></a>
+          </div>
+          <h2><a href="" ><%= item.name %></a></h2>
+          <!-- <div class="rating-result" title="90%">
+            <span>
+                <span>50%</span>
+            </span>
+        </div> -->
+          <div class="product-price">
+            <span>Rs. <%=item.selling_price%> </span>
+            <span class="old-price text-decoration-line-through">Rs. <%=item.price%> </span>
+            <span class="discount">(<%=item.discount%>)</span>
+          </div>
+          <div class="product-action-1 show">
+            <a aria-label="Add To Cart" class="action-btn hover-up" href=""><i
+                class="fi-rs-shopping-bag-add"></i></a>
+          </div>
+
+          <div class="text-center">
+            <a href="/products/<%=item._id%>" class="btn btn-primary">View Product</a>
+          </div>
+
+        </div>
+      </div>
+    <% } %>
+
+      
+    </div>
+  </div>
+
+  <div class="container-fluid p-4" style="background-color: #ff324d;">
+    <div class="row">
+        <div class="col-md-6 text-center text-white">
+            <h3>Join Our Newsletter Now</h3>
+            <p> Register now to get updates on promotions. </p>
+        </div>
+        <div class="col-md-4 text-center align-self-center">
+            <form>
+                <div class="input-group text-center">
+                    <input type="text" required="" class="form-control rounded-0 p-2" placeholder="Enter Email Address">
+                    <button type="submit" class="btn btn-dark rounded-0 input-group-text" name="submit" value="Submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+  <!-- Footer -->
+
+  <%- include('../partials/footer') %>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Include Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
